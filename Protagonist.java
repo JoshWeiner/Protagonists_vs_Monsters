@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /**
  * The player the user will control
  */
@@ -147,11 +145,20 @@ public class Protagonist {
         monster.attack(this);
     }
 
+    /**
+     * Prepares the player for a special attack by increasing the damage dealt
+     * as well as decreasing defense of the player
+     */
+
     public void specialize() {
         // changes defense and attackRating by arbitrary values, maybe randomize them later?
         setDefense((int) (getDefense() * 0.5));
         setAttackRating(getAttackRating() * 2.0);
     }
+
+    /**
+     * Undoes the effects of specialize()
+     */
 
     public void normalize() {
         setDefense(getDefense() * 2);
