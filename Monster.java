@@ -5,6 +5,10 @@ public class Monster {
     private int defense;
     private double attackRating;
     
+    /**
+     * Sets the respective fields of monsters to certain values
+     */
+    
     public Monster() {
         health = 150;
         strength = (int) (Math.random() * 45 + 20);
