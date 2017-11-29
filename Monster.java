@@ -12,26 +12,23 @@ public class Monster {
         attackRating = (double) 1;
     }
     
-    private boolean isAlive() {
-        if (health <= 0) {
-            return false;
-        }
-        return true;
+    public boolean isAlive() {
+        return health > 0;
     }
     
     public int getDefense() {
         return defense;
     }
     
-    public int lowerHP(int damage) {
+    public void lowerHP(int damage) {
         health -= damage;
-        return health;
     }
     
-    public int attack(Protagonist person) {
-        int damage = 0;
-        damage = (int) (strength * attackRating) - person.getDefense();
-        return damage;
+    public void attack(Protagonist person) {
+        int damage = (int) (strength * attackRating) - person.getDefense();
+        if (damage >=0) {
+            person.lowerHP(damage);
+        }
     }
     
     public static void main(String[] args) {

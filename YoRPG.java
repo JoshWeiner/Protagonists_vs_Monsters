@@ -48,7 +48,7 @@ public class YoRPG
     post: according to user input, modifies instance var for difficulty 
     and instantiates a Protagonist
     =============================================*/
-  public void newGame()
+  private void newGame()
   {
     String s;
     String name = "";
@@ -113,14 +113,7 @@ public class YoRPG
         else
           pat.normalize();
 
-        d1 = pat.attack( smaug );
-        d2 = smaug.attack( pat );
-
-        System.out.println( "\n" + pat.getName() + " dealt " + d1 +
-                            " points of damage.");
-
-        System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
-                            " for " + d2 + " points of damage.");
+        pat.attack(smaug);
 	    }//end while
 
 	    //option 1: you & the monster perish
