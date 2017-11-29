@@ -51,8 +51,4 @@ public class Monster {
             person.lowerHP(damage);
         }
     }
-    
-    public static void main(String[] args) {
-        
-    }
 }
