@@ -39,6 +39,7 @@ public class Monster {
     public void lowerHP(int damage) {
         health -= damage;
     }
+    
     /**
      *The value of damage is calculated (strength * attackRating) - person.getDefense()
      *@param person is the target to attack
