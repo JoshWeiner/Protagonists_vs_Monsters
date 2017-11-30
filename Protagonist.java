@@ -2,7 +2,7 @@
  * The player the user will control
  */
 
-public class Protagonist {
+public class Protagonist extends Character {
     private String name;
     private int hp;
     private int strength;
@@ -27,77 +27,7 @@ public class Protagonist {
         this.name = name;
     }
 
-    /**
-     * standard getter
-     * @return the health of the Protagonist
-     */
 
-    public int getHp() {
-        return hp;
-    }
-
-    /**
-     * standard setter
-     * @param hp the hp you want the Protagonist to have
-     */
-
-    public void setHp(int hp) {
-        this.hp = hp;
-    }
-
-    /**
-     * standard getter
-     * @return the strength of the Protagonist
-     */
-
-    public int getStrength() {
-        return strength;
-    }
-
-    /**
-     * standard setter
-     * @param strength the strength you want the Protagonist to have
-     */
-
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
-
-    /**
-     * standard getter
-     * @return the defense of the Protagonist
-     */
-
-    public int getDefense() {
-        return defense;
-    }
-
-    /**
-     * standard setter
-     * @param defense the defense you want the Protagonist to have
-     */
-
-    public void setDefense(int defense) {
-        this.defense = defense;
-    }
-
-    /**
-     * standard getter
-     * @return the attackRating of the Protagonist
-     */
-
-    public double getAttackRating() {
-        return attackRating;
-    }
-
-    /**
-     * standard setter
-     * @param attackRating the attackRating you want the Protagonist to have
-     */
-
-    public void setAttackRating(double attackRating) {
-        this.attackRating = attackRating;
-    }
 
     /**
      * Creates a Protagonist and uses user input to initialize all fields
@@ -111,38 +41,6 @@ public class Protagonist {
         setDefense(100);
         setHp(10000);
         setStrength(20);
-    }
-
-    /**
-     * @return whether the Protagonist is alive or read
-     */
-
-    public boolean isAlive() {
-        return getHp() > 0;
-    }
-
-    /**
-     * Sets the hp to the former hp minus the damage
-     * @param damage is how much damage to subtract from the hp
-     */
-
-    public void lowerHP(int damage) {
-        setHp(getHp() - damage);
-    }
-
-    /**
-     * Lowers the monster's hp by
-     * damage = (strength * attack rating) - monster defense
-     * Then the monster attacks the player in return
-     * @param monster is the monster to attack
-     */
-
-    public void attack(Monster monster) {
-        int damage = (int) (getStrength() * getAttackRating()) - monster.getDefense();
-        if (damage >= 0) {
-            monster.lowerHP(damage);
-        }
-        monster.attack(this);
     }
 
     /**
