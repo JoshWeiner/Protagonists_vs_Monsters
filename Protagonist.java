@@ -3,11 +3,7 @@
  */
 
 public class Protagonist extends Character {
-    private String name;
-    private int hp;
-    private int strength;
-    private int defense;
-    private double attackRating;
+    protected String name;
 
     /**
      * standard getter
@@ -26,8 +22,6 @@ public class Protagonist extends Character {
     public void setName(String name) {
         this.name = name;
     }
-
-
 
     /**
      * Creates a Protagonist and uses user input to initialize all fields
