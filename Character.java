@@ -100,16 +100,18 @@ public class Character {
     /**
      * Lowers the other character's hp by
      * damage = (strength * attack rating) - other character defense
-     * Then the other character attacks the player in return
+     * if the damage is less than 0, it inflicts 0 damage
      * @param character is the character to attack
+     * @return the damage dealt
      */
 
-    public void attack(Character character) {
+    public int attack(Character character) {
         int damage = (int) (getStrength() * getAttackRating()) - character.getDefense();
         if (damage >= 0) {
             character.lowerHP(damage);
+            return damage;
         }
-        character.attack(this);
+        return 0;
     }
 
 
